@@ -1,0 +1,219 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glaucoma Detection</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Miniver&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(to right, rgb(243, 230, 146), rgb(255, 174, 201));
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .hero-details {
+            flex: 1;
+            max-width: 50%;
+        }
+
+        .hero-image-wrapper {
+            flex: 1;
+            max-width: 50%;
+            text-align: right;
+        }
+
+        .hero-section .title {
+            font-size: 60px;
+            color: #1e293b;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .hero-section .subtitle {
+            font-size: 24px;
+            color: #1e293b;
+            margin-bottom: 20px;
+        }
+
+        .hero-section .description {
+            font-size: 18px;
+            line-height: 1.8;
+            color: rgb(38, 15, 23);
+            text-align: justify;
+            margin-top: 20px;
+            padding: 50px;
+        }
+
+        .hero-image-wrapper img {
+        width: 100%;
+        max-width: 600px; /* Increased size */
+        border-radius: 20px; /* Optional, for rounded corners */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25); /* Shadow added here */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth shadow transition */
+        }
+
+        .hero-image-wrapper img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35); /* Enhanced shadow on hover */
+        }
+
+        /* Features Section */
+        .features {
+            text-align: center;
+            background: linear-gradient(to right, rgb(255, 174, 201),rgb(243, 230, 146)) ;
+            padding: 50px 20px;
+        }
+
+        .feature-list {
+            list-style: none;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0;
+            text-align: left;
+        }
+
+        .feature-list li {
+            margin-bottom: 20px;
+            font-size: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-list li:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Call-to-Action Section */
+        .cta-section {
+            background: linear-gradient(to right, rgb(243, 230, 146), rgb(255, 174, 201));
+            text-align: center;
+            padding: 50px 20px;
+            color: #1e293b;
+        }
+
+        .cta-section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .cta-section .button {
+            display: inline-block;
+            color: white;
+            background: #1e293b;
+            border-radius: 30px;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .cta-section .button:hover {
+            background: #fbbf24;
+            color: black;
+        }
+
+        /* Footer Section */
+        footer {
+            background: #1e293b;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer .social-links a {
+            margin: 0 10px;
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-links a:hover {
+            color: lightcoral;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-details {
+                max-width: 100%;
+            }
+
+            .hero-image-wrapper {
+                max-width: 100%;
+                text-align: center;
+            }
+
+            .hero-image-wrapper img {
+                max-width: 70%;
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-details">
+                <h2 class="title">Glaucoma Disease</h2>
+                <h3 class="subtitle">"Your Vision, Our Mission: Detect Glaucoma Early and Effortlessly"</h3>
+                <p class="description">
+                    Glaucoma is often called the "silent thief of sight" because it typically progresses without warning. By the time symptoms become noticeable, irreversible damage might have already occurred. Our mission is to provide early and efficient detection of glaucoma, ensuring that vision loss is minimized. <br><br>
+
+                    With the power of AI, our tool offers precise, fast, and reliable predictions, empowering you to take control of your eye health. Through this cutting-edge technology, we aim to make glaucoma detection accessible, saving millions from the burden of vision loss. Early detection and timely intervention can make all the difference. <br><br>
+
+                    Join us in this mission to protect vision and enhance lives. Whether you're a patient, caregiver, or healthcare professional, our solution is here to assist you in making informed decisions for better eye health. Let’s safeguard your sight, together.
+                </p>
+            </div>
+            <div class="hero-image-wrapper">
+                <img src="/static/home.gif" alt="Hero">
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <ul class="feature-list">
+                <li><strong>Fast:</strong> Get results in seconds.</li>
+                <li><strong>Accurate:</strong> Powered by AI for precise detection.</li>
+                <li><strong>Reliable:</strong> Your vision, our priority.</li>
+            </ul>
+        </section>
+
+        <!-- Call-to-Action Section -->
+        <section class="cta-section">
+            <h2>Ready to Protect Your Vision?</h2>
+            <a href="/predict" class="button">Start Detection</a>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2025 Glaucoma Detection. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </footer>
+    </main>
+</body>

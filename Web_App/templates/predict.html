@@ -1,0 +1,88 @@
+<head>
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Miniver&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, rgb(76, 174, 239), rgb(255, 199, 221), rgb(248, 228, 189));
+    background-attachment: fixed; 
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.predict-page {
+    background: linear-gradient(to right, rgb(174, 238, 255), rgb(255, 199, 221));
+    padding: 30px 20px;
+    border-radius: 15px;
+    max-width: 600px;
+    margin: 50px auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.predict-page .title {
+    font-size: 28px;
+    font-weight: 600;
+    color: rgb(38, 15, 23);
+    margin-bottom: 20px;
+}
+
+.predict-page .form-label {
+    font-size: 18px;
+    font-weight: 500;
+    color: rgb(38, 15, 23);
+}
+
+.predict-page .input-field {
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px solid lightcoral;
+    font-size: 16px;
+}
+
+.predict-page .button {
+    background: lightcoral;
+    color: white;
+    font-weight: 600;
+    border-radius: 30px;
+    padding: 10px 20px;
+    border: none;
+    transition: 0.3s ease;
+}
+
+.predict-page .button:hover {
+    background: black;
+    color: lightcoral;
+}
+
+.result-message {
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+   </style>
+</head>
+{% include 'navbar.html' %}
+<div class="container predict-page mt-5">
+    <h1 class="text-center title">Upload an Eye Image</h1>
+    <form action="/predict" method="POST" enctype="multipart/form-data" class="mt-4 form-section">
+        <div class="mb-3">
+            <label for="image" class="form-label">Choose an image:</label>
+            <input type="file" class="form-control input-field" id="image" name="image" required>
+        </div>
+        <button type="submit" class="btn button w-100">Predict</button>
+    </form>
+    {% if prediction %}
+    <div class="alert alert-success mt-4 text-center result-message">Prediction: {{ prediction }}</div>
+    {% elif error %}
+    <div class="alert alert-danger mt-4 text-center result-message">{{ error }}</div>
+    {% endif %}
+</div>
+

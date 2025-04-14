@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model 3 - DenseNet121 Model</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, rgb(243, 230, 146), rgb(255, 174, 201));
+            color:#1e293b;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #1e293b;;
+            padding: 15px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            color: #f5a623;
+            font-size: 28px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fbb7b7;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgb(236, 169, 169);
+            border-radius: 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            font-size: 24px;
+            color: #2d3436;
+            margin-bottom: 10px;
+        }
+
+        .section h3 {
+            font-size: 20px;
+            color: #2d3436;
+            margin-bottom: 10px;
+        }
+
+        .section p {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #2d3436;
+        }
+
+        .section img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .performance-metrics {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .performance-metrics .metric {
+            flex: 1;
+            text-align: center;
+        }
+
+        .performance-metrics img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #0e0d0d;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .button:hover {
+            transform: scale(1.05);
+            background: linear-gradient(to right, #e55d3b, #f78e69);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #2d3436;
+        }
+
+        ul li strong {
+            color: #0d0d0d;
+        }
+
+        strong {
+            color: #0d0d0d;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Model 3 - DenseNet121</h1>
+    </header>
+
+    <div class="container">
+        <!-- Section 1: Overview -->
+        <div class="section">
+            <h2>Model Overview</h2>
+            <p>DenseNet-121, or Dense Convolutional Network, is a deep learning architecture known for its efficient use of parameters and feature reuse. Unlike traditional CNNs, where each layer passes information only to the next, DenseNet connects every layer to all subsequent layers, ensuring maximum information flow and mitigating the vanishing gradient problem. This results in highly compact models with enhanced performance and reduced computational cost. DenseNet-121 has been widely used in medical imaging tasks, particularly in detecting diseases from X-rays, MRIs, and other diagnostic images, due to its ability to learn complex patterns with fewer parameters.</p>
+                <p>DenseNet-121 consists of four dense blocks, each comprising multiple convolutional layers. Between these dense blocks are transition layers that include batch normalization, a 1x1 convolution, and an average pooling layer to reduce feature map dimensions and control complexity. Each dense block employs a "growth rate" to determine how many new feature maps each layer contributes, ensuring efficient use of parameters. Skip connections between layers allow feature reuse, improving gradient flow during training. The final layers include a global average pooling layer followed by a fully connected layer and a softmax activation function for classification tasks. This layered structure makes DenseNet-121 both computationally efficient and highly effective in extracting hierarchical features from input data.</p>
+            <p><strong>Features Extracted:</strong> 1024 features</p>
+        </div>
+
+        <!-- Section 2: Graphs and Results -->
+        <div class="section">
+            <h2>Performance Metrics</h2>
+            <p>The following graphs showcase the model's performance over multiple training epochs:</p>
+            <div class="performance-metrics">
+                <div class="metric">
+                    <h3>Training and Validation Loss Graph</h3>
+                    <img src="/static/Loss_graph_3.png" alt="Loss Graph">
+                </div>
+                <div class="metric">
+                    <h3>Training and Validation Accuracy Graph</h3>
+                    <img src="/static/Accuracy_Graph_3.png" alt="Accuracy Graph">
+                </div>
+            </div>
+            <p>Additional metrics include:</p>
+            <ul>
+                <li><strong>Accuracy:</strong> 95%</li>
+                <li><strong>Precision:</strong> 94%</li>
+                <li><strong>Recall: </strong>94%</li>
+            </ul>
+        </div>
+
+        <!-- Section 3: Use Case and Application -->
+<div class="section">
+    <h2>Use Case and Application</h2>
+    <p>DenseNet-121 is particularly effective in medical image analysis, making it an essential tool for diagnosing diseases like glaucoma, diabetic retinopathy, and other ocular conditions by analyzing high-resolution retinal scans. Its dense connectivity allows the model to efficiently reuse learned features, improving accuracy and reducing computational costs. DenseNet-121 also excels in:</p>
+    <ul>
+        <li><strong>Clinical Diagnosis:</strong> Assisting radiologists and ophthalmologists by providing reliable, automated assessments of medical images, reducing diagnostic workload and improving consistency.</li>
+        <li><strong>Telemedicine:</strong> Enabling scalable remote diagnostics for patients in underdeveloped regions, making healthcare more accessible.</li>
+        <li><strong>Research and Development:</strong> Facilitating the development of advanced diagnostic tools and furthering research into disease progression through automated pattern recognition.</li>
+    </ul>
+    <p>DenseNet-121's efficiency and accuracy make it a powerful asset in healthcare and beyond, advancing solutions for real-world challenges.</p>
+</div>
+
+
+        <!-- Back Button -->
+        <div class="section">
+            <a href="/" class="button">Back to Home</a>
+        </div>
+    </div>
+</body>
+
+</html>
